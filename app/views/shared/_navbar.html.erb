@@ -23,8 +23,9 @@
                   <%= current_user.name %><span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Your Trips</a></li>
-                  <li><a href="#">Wish Lists</a></li>
+                  <li><%= link_to "Create recipe", new_recipe_path %></li>
+                  <li><a href="#">Your profile</a></li>
+                  <li><a href="#">Bookmarks</a></li>
                   <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="#">Account Setting</a></li>

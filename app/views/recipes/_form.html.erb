@@ -1,0 +1,62 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Create your recipe!
+  </div>
+
+  <div class="panel-body">
+    <div class="container">
+
+      <%= form_for @recipe, html: {multipart: true} do |f| %>
+
+        <div class="row">
+          <div class=col-md-10>
+            <div class="form-group">
+              <%= f.text_field :title, placeholder: "Recipe title", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.text_area :describe, rows: 5, placeholder: "Tell the story of the recipe", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <label>Ingredients</label>
+              <%= f.text_area :ingredients, rows: 5, placeholder: "100g meat", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.number_field :serving, rows: 5, placeholder: "How many servings?", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <label>Method</label>
+              <%= f.text_area :method, placeholder: "Step by step", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <span class="btn btn-default btn-file">
+                <i class="fa fa-cloud-upload fa -lg"></i> Upload Photos
+                <%= file_field_tag "images[]", type: :file, multiple: true %>
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="photos">
+          <%= render 'photos/list' %>
+        </div>
+
+
+        <div class="actions">
+          <%= f.submit "Publish", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
