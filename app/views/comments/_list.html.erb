@@ -1,0 +1,23 @@
+<% if @comments.count == 0 %>
+  <div class="text-md-center">There's no review yet</div>
+<% else %>
+  <% @comments.order("id desc").each do |comment|%>
+    <hr>
+    <div class="row">
+      <div class="col-md-1">
+        <%= image_tag avatar_url(comment.user), class: "img-cicle avatar-medium" %>
+      </div>
+      <div class="col-md-1">
+        <div>
+          <strong><%= comment.user.name %></strong>
+          <span class="pull-right">
+            <%= link_to [@recipe, comment], method: :delete, data: {confirm: "Are you sure?"} do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <% end %>
+          </span>
+          <div><%= comment.content %></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

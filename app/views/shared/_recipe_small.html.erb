@@ -1,5 +1,5 @@
 <div class="card">
-  <img class="card-img-top img-fluid" src="https://img-global.cpcdn.com/005_recipes/107ef7bf531d8548/400sq70/photo.jpg" alt="Card image cap">
+  <%= image_tag recipe.photos.first.file, class: "card-img-top img-fluid" %>
   <div class="card-block">
     <h4 class="card-title"><%= recipe.title %></h4>
     <p class="card-text"><%= recipe.describe %></p>

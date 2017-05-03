@@ -1,0 +1,9 @@
+<!-- Form for write comment -->
+<%= form_for([@recipe, @recipe.comments.new]) do |f| %>
+  <%= f.text_field :content, class: "comment-box", placeholder: "Write comment ..." %>
+  <%= f.hidden_field :recipe_id, value: @recipe.id %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
