@@ -1,6 +1,6 @@
 class PageController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:home]
 
   def home
     @recipes = current_user.recipes
