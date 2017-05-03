@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :recipe_comments
   root 'page#landing'
 
   get 'photos/destroy'

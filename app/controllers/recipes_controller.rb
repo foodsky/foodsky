@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
 
   def show
     @photos = @recipe.photos
+    @recipe_comment = RecipeComment.new
   end
 
   def new
