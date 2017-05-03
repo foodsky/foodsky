@@ -50,3 +50,81 @@
 .panel-heading.preview img{
   width: 100%;
 }
+.landing-page{
+    display: flex;
+    max-width: 100%;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    transition: opacity 1s ease 0s,transform 1s ease 0s;
+}
+
+.landing-page ::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.753), rgba(0,0,0,0.753)), url('./bg.jpg');
+    opacity: .4;
+    content: "";
+    z-index: -1;
+}
+
+.landing-page .inner{
+    display: block;    
+    margin-top: 150px;
+    align-items: center;
+    overflow-x: hidden;
+    z-index: 999;
+    padding: 3.5rem 2.75rem;
+    max-width: 100%;
+    width: 28rem;
+    float: center;
+    color: #fff;
+    transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;    
+}
+
+.landing-page .inner h1{
+    font-family: 'Montserrat';
+    line-height: 1.125;
+    font-weight: 400;
+    font-size: 3.75em;
+}
+.landing-page .inner ul{
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+.landing-page .inner ul li{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: calc(100% - 0.75rem);
+    margin: 0.375rem;
+}
+
+#button-login .signin{
+    background-color: #42B398;
+    color: #FFFFFF;
+}
+
+#button-login li a{
+    display: block;
+    width: 15rem;
+    height: 3.25rem;
+    line-height: 3.25rem;
+    padding: 0 1.625rem;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-family: 'Montserrat';
+    letter-spacing: 0.275rem;
+    font-weight: 400;
+    border-radius: 2rem;
+    text-decoration: none;
+}
+
+.signup{
+    color: #FFFFFF;
+}
