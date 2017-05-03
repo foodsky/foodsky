@@ -4,10 +4,6 @@
 @import "font-awesome";
 //= require bootstrap.min;
 
-.text {
-    font-size: 1.5em;
-}
-
 
 .avatar-small {
   width: 28px;
@@ -54,6 +50,7 @@
 .panel-heading.preview img{
   width: 100%;
 }
+
 .landing-page{
     display: flex;
     max-width: 100%;
@@ -63,6 +60,7 @@
     overflow: hidden;
     text-align: center;
     transition: opacity 1s ease 0s,transform 1s ease 0s;
+    font-size: 16px;
 }
 
 .landing-page ::before{
@@ -85,7 +83,7 @@
     z-index: 999;
     padding: 3.5rem 2.75rem;
     max-width: 100%;
-    width: 28rem;
+    width: 38rem;
     float: center;
     color: #fff;
     transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;    
@@ -114,9 +112,13 @@
     color: #FFFFFF;
 }
 
+#button-login .signin:hover{
+    background-color: #6ADFC3;
+}
+
 #button-login li a{
     display: block;
-    width: 15rem;
+    width: 20rem;
     height: 3.25rem;
     line-height: 3.25rem;
     padding: 0 1.625rem;
@@ -131,4 +133,5 @@
 
 .signup{
     color: #FFFFFF;
+    text-decoration: none;
 }
