@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
 
   def show
     @photos = @recipe.photos
+    @image = @photos.find(params[:id])
   end
 
   def new
