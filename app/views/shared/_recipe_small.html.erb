@@ -5,7 +5,7 @@
     <p class="card-text"><%= recipe.describe %></p>
   </div>
   <div class="card-footer">
-    <a href="#">Pnt</a>
+    <%= link_to "Show", recipe_path(recipe.id) %>
     <small class="text-muted">Last updated 3 mins ago</small>
   </div>
 </div>
