@@ -1,13 +1,25 @@
+<style type="text/css" media="screen">
+	a{
+		color:#fff;
+		text-decoration: none;
+	}
+	a:hover{
+		color: #fff;
+	}
+</style>
 
 <div class="landing-page">
     <div class="inner">
-    <h1>CookSky</h1>
-    <hr>
+    <h1>FoodSky</h1>
+    <hr style="background-color: #fff; width:120px;">
+    <p>Donec iaculis lorem metus, at euismod lorem et lobortis. Maecenas tincidunt posuere quam, eget tempus rutrum non. Ut tincidunt amet ipsum.</p>
     <ul class="button" id="button-login">
         <li>
-            <a href="#" type="submit" class="signin">Đăng Nhập</a>
+        	<%= link_to "Log In", new_user_session_path, class: "signin" %>
+        </li>
+        <li>
+        	<%= link_to "Sign Up", new_user_registration_path, class: "sign-up" %>
         </li>
     </ul>
-    <a href="#" class="signup">Đăng ký</a>                
 </div>
 </div>
