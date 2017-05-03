@@ -1,5 +1,6 @@
 class PageController < ApplicationController
   def home
+    @recipes = current_user.recipes
   end
 
   def landing

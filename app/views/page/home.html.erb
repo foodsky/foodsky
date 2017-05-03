@@ -1,70 +1,12 @@
-
-<div class="card-columns">
-  <div class="card">
-    <img class="card-img-top img-fluid" src="https://img-global.cpcdn.com/005_recipes/107ef7bf531d8548/400sq70/photo.jpg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Cải Bó Xôi Xào Lòng Gà</h4>
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elitcolumn-count: 4;column-count: 4;column-count: 4;column-count: 4;. . Inventore, excepturi sit ipsum fugiat ipsam minima deserunt. Et amet alias molestiae maiores quod.</p>
-    </div>
-    <div class="card-footer">
-      <a href="#">Pnt</a>
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
+<% if @recipes %>
+  <div class="card-columns">
+    <% @recipes.each do |recipe| %>
+      <%= render partial: 'shared/recipe_small', locals: { recipe: recipe } %>
+    <% end %>
   </div>
-  <div class="card">
-    <img class="card-img-top img-fluid" src="https://img-global.cpcdn.com/005_recipes/107ef7bf531d8548/400sq70/photo.jpg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Cải Bó Xôi Xào Lòng Gà</h4>
-      <p class="card-text">Lorem ipsum dolor</p>
-    </div>
-    <div class="card-footer">
-      <a href="#">Pnt</a>
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
+<% else %>
+  <div>
+    We don't have any recipe. Follow other or create new recipe.
   </div>
-  <div class="card">
-    <img class="card-img-top img-fluid" src="https://img-global.cpcdn.com/005_recipes/107ef7bf531d8548/400sq70/photo.jpg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Cải Bó Xôi Xào Lòng Gà</h4>
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-    </div>
-    <div class="card-footer">
-      <a href="#">Pnt</a>
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top img-fluid" src="https://img-global.cpcdn.com/005_recipes/107ef7bf531d8548/400sq70/photo.jpg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Cải Bó Xôi Xào Lòng Gà</h4>
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore recusandae sequi pariatur esse qui vero excepturi. Inventore, excepturi sit ipsum fugiat ipsam minima deserunt. Et amet alias molestiae maiores quod.</p>
-    </div>
-    <div class="card-footer">
-      <a href="#">Pnt</a>
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top img-fluid" src="https://img-global.cpcdn.com/005_recipes/107ef7bf531d8548/400sq70/photo.jpg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Cải Bó Xôi Xào Lòng Gà</h4>
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. column-count: 4;column-count: 4;column-count: 4;column-count: 4; Tempore recusandae sequi pariatur esse qui vero excepturi. Inventore, excepturi sit ipsum fugiat ipsam minima deserunt. Et amet alias molestiae maiores quod.</p>
-    </div>
-    <div class="card-footer">
-      <a href="#">Pnt</a>
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top img-fluid" src="https://img-global.cpcdn.com/005_recipes/107ef7bf531d8548/400sq70/photo.jpg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Cải Bó Xôi Xào Lòng Gà</h4>
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore recusandae sequi pariatur esse qui vero excepturi. Inventore, excepturi sit ipsum fugiat ipsam minima deserunt. Et amet alias molestiae maiores quod.</p>
-    </div>
-    <div class="card-footer">
-      <a href="#">Pnt</a>
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-</div>
+<% end %>
 
