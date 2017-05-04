@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
 
   def show
     @photos = @recipe.photos
-    @image = @photos.find(params[:id])
+    @image = @photos.first
     @comments = @recipe.comments
     @hasComment = @comments.find_by(user_id: current_user.id) if current_user
   end

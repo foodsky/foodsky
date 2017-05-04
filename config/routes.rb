@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
+
   get 'comments/create'
 
   get 'comments/destroy'
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :recipes
+  resources :users, only: [:show]
   resources :photos
   resources :recipes do
     resources :comments, only: [:create, :destroy]

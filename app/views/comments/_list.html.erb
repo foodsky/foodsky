@@ -3,7 +3,7 @@
 <% else %>
   <% @comments.order("id desc").each do |comment|%>
     <hr>
-    <%= image_tag avatar_url(comment.user), class: "img-cicle avatar-medium" %>
+    <%= image_tag avatar_url(comment.user), class: "img-circle avatar-medium" %>
     <div>
       <strong><%= comment.user.name %></strong>
       <span class="pull-right">
