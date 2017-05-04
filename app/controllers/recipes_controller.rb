@@ -29,7 +29,8 @@ class RecipesController < ApplicationController
       end
 
       @photos = @recipe.photos
-      redirect_to edit_recipe_path(@recipe), notice: "Publish success!"
+      # redirect_to edit_recipe_path(@recipe), notice: "Publish success!"
+      redirect_to home_path, notice: "Publish success!"
     else
       render :new
     end
@@ -55,6 +56,16 @@ class RecipesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @photos = @recipe.photos
+    @photos.each do |photo|
+      photo.destroy
+    end
+    @recipe.destroy
+    redirect_to home_path
   end
 
 
