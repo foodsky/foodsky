@@ -13,6 +13,11 @@
 		margin-bottom: 10px;
 		font-size: 16px;
 	}
+	.user-name{
+		font-weight: bold;
+		font-style: italic;
+		color: #f0ad4e;
+	}
 </style>
 
 <div class="container-fluid">
@@ -25,6 +30,15 @@
 			</div>
 			<div class = "wrap-content">
 				<h1 class="title-recipes"><%= @recipe.title %> <i class="fa fa-star" aria-hidden="true"></i></h1>
+				<div class="page-header">
+					<h2 class= "user-name"><i class="fa fa-user-o" aria-hidden="true"></i> <%= @recipe.user.name %></h2>
+					<% if current_user.name == @recipe.user.name %>
+						<h3 style="color:#3c763d">
+							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							<%= link_to "Edit recipes", edit_recipe_path(@recipe) %>
+						</h3>
+					<% end %>
+				</div>
 				<button class="btn btn-primary servings" type="button">
 					Servings <span class="badge"><%= @recipe.serving %></span>
 				</button>
@@ -50,9 +64,8 @@
 					</div>
 				</div>
 
-        <%= render 'comments/create_form' %>
-        <%= render 'comments/list' %>
-
+		        <%= render 'comments/create_form' %>
+		        <%= render 'comments/list' %>
 			</div>		
 		</div>
 		<div class="col-xs-12 col-sm-6 col-md-2"></div>		
