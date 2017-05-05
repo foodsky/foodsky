@@ -8,7 +8,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
     <style type="text/css" media="screen">
 div {
   font-size:medium !important;
@@ -28,6 +27,27 @@ a{
 }
 
       
+=======
+    <style type="text/css" media="screen">
+      div{
+        font-size:medium !important;
+      }
+      input{
+        font-size:medium !important;
+      }
+      button{
+        font-size:medium !important;
+      }
+      a{
+        font-size:medium !important;
+      }
+      body{
+        font-size:medium !important;
+      }
+      textarea{
+        font-size:medium !important;
+      }
+>>>>>>> 71b07d6745c06d99e8fe85bbee28a8dda7e8c64e
     </style>
   </head>
 
@@ -39,7 +59,11 @@ a{
         <%= yield %>
       </div>
     <% else %>
+<<<<<<< HEAD
         <%= yield %>
+=======
+      <%= yield %>
+>>>>>>> 71b07d6745c06d99e8fe85bbee28a8dda7e8c64e
     <% end %>
   </body>
 </html>

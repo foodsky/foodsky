@@ -4,14 +4,14 @@
   <% @comments.order("id desc").each do |comment|%>
     <hr>
     <%= image_tag avatar_url(comment.user), class: "img-circle avatar-medium" %>
+    <strong><%= comment.user.name %></strong> 
     <div>
-      <strong><%= comment.user.name %></strong>
       <span class="pull-right">
         <%= link_to [@recipe, comment], method: :delete, data: {confirm: "Are you sure?"} do %>
         <i class="fa fa-trash" aria-hidden="true"></i>
         <% end %>
       </span>
-      <div><%= comment.content %></div>
+      <div style="margin-top:5px; margin-left:5px;"><%= comment.content %></div>
     </div>
 
   <% end %>
