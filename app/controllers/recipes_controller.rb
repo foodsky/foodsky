@@ -4,12 +4,21 @@ class RecipesController < ApplicationController
 
 
   def index
+     @recipes = if params[:term]
+     Recipe.where('title LIKE ?', "%#{params[:term]}%")
+   else
     @recipes = current_user.recipes
   end
 
+  end
+
+
+
   def show
     @photos = @recipe.photos
-    @recipe_comment = RecipeComment.new
+    @image = @photos.first
+    @comments = @recipe.comments
+    @hasComment = @comments.find_by(user_id: current_user.id) if current_user
   end
 
   def new
@@ -27,7 +36,8 @@ class RecipesController < ApplicationController
       end
 
       @photos = @recipe.photos
-      redirect_to edit_recipe_path(@recipe), notice: "Publish success!"
+      # redirect_to edit_recipe_path(@recipe), notice: "Publish success!"
+      redirect_to home_path, notice: "Publish success!"
     else
       render :new
     end
@@ -55,6 +65,26 @@ class RecipesController < ApplicationController
     end
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @photos = @recipe.photos
+    @photos.each do |photo|
+      photo.destroy
+    end
+    @recipe.destroy
+    redirect_to home_path
+  end
+
+
+  def self.search(term)
+  if term
+    Recipe.where('title LIKE ?', "%#{params[:term]}%").order('id DESC')
+  else
+    @recipes = current_user.recipes.order('id DESC') 
+  end
+
+  redirect_to home_path
+end
 
   private
     def set_recipe
@@ -62,6 +92,6 @@ class RecipesController < ApplicationController
     end
 
     def recipe_params
-      params.require(:recipe).permit(:title, :describe, :ingredients, :serving, :method)
+      params.require(:recipe).permit(:title, :describe, :ingredients, :serving, :method, :term)
     end
 end

@@ -1,3 +1,80 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<style type="text/css" media="screen">
 
+	.wrap-content{
+		margin-top: 20px;
+		font-size: 16px;
+	}
+	.title-recipes{
+		color: #8bad00;
+		font-size: 40px;
+		font-weight: bold;
+	}
+	.servings{
+		margin-bottom: 10px;
+		font-size: 16px;
+	}
+	.user-name{
+		font-weight: bold;
+		font-style: italic;
+		color: #f0ad4e;
+	}
+</style>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-2"></div>
+
+		<div class="col-xs-12 col-sm-6 col-md-8">
+			<div class = "wrap-img">
+				<%= image_tag @image.file , class: "img-rounded", alt: "image foodsky", width:"100%" %>
+			</div>
+
+			
+			
+			<div class = "wrap-content">
+				<h1 class="title-recipes"><%= @recipe.title %> <i class="fa fa-star" aria-hidden="true"></i></h1>
+				<div class="page-header">
+					<h2 class= "user-name"><i class="fa fa-user-o" aria-hidden="true"></i> <%= @recipe.user.name %></h2>
+					<% if current_user.name == @recipe.user.name %>
+						<h3 style="color:#3c763d">
+							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							<%= link_to "Edit recipes", edit_recipe_path(@recipe) %>
+						</h3>
+						<h3 style="color:#3c763d">
+			            	<i class="fa fa-trash" aria-hidden="true"></i>
+			            	<%= link_to "Delete recipes", recipe_path(@recipe), method: :delete, data: {confirm: "Are you sure?"} %>
+						</h3>
+					<% end %>
+				</div>
+				<button class="btn btn-primary servings" type="button">
+					Servings <span class="badge"><%= @recipe.serving %></span>
+				</button>
+
+				<div class="panel panel-info">
+					<div class="panel-heading"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Story of the recipes</div>
+					<div class="panel-body">
+				    	<%= simple_format(@recipe.describe) %>
+					</div>
+				</div>
+
+				<div class="panel panel-info">
+					<div class="panel-heading"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Ingredients</div>
+					<div class="panel-body">
+				    	<%= simple_format(@recipe.ingredients) %>
+					</div>
+				</div>
+
+				<div class="panel panel-info">
+					<div class="panel-heading"><i class="fa fa-th-list" aria-hidden="true"></i> Method</div>
+					<div class="panel-body">
+				    	<%= simple_format(@recipe.method) %>
+					</div>
+				</div>
+
+		        <%= render 'comments/create_form' %>
+		        <%= render 'comments/list' %>
+			</div>		
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-2"></div>		
+	</div>
+</div>

@@ -1,0 +1,13 @@
+<div class="card">
+  <%if (image_tag recipe.photos.first != nil) %>
+    
+  <%end %>
+  <div class="card-block">
+    <h4 class="card-title"><%= recipe.title %></h4>
+    <p class="card-text"><%= recipe.describe %></p>
+  </div>
+  <div class="card-footer">
+    <%= link_to "Show", recipe_path(recipe.id) %>
+    <small class="text-muted">Last updated 3 mins ago</small>
+  </div>
+</div>
