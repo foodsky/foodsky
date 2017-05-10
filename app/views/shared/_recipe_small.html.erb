@@ -1,13 +1,12 @@
 <div class="card">
-  <%if (image_tag recipe.photos.first != nil) %>
-    
-  <%end %>
+  <%= image_tag recipe.photos.first.file, class: "card-img-top img-fluid" %>
   <div class="card-block">
-    <h4 class="card-title"><%= recipe.title %></h4>
+    <h4 class="card-title recipe-title"><%= link_to recipe.title, recipe_path(recipe.id) %></h4>
     <p class="card-text"><%= recipe.describe %></p>
   </div>
   <div class="card-footer">
-    <%= link_to "Show", recipe_path(recipe.id) %>
+    <span class= "btn btn-default" title="Like"><i class="fa fa-heart like" aria-hidden="true"></i></span>
+	<span class= "btn btn-default" title="Bookmark"><i class="fa fa-bookmark bookmark" aria-hidden="true"></i></span>
     <small class="text-muted">Last updated 3 mins ago</small>
   </div>
 </div>

@@ -12,8 +12,6 @@ class RecipesController < ApplicationController
 
   end
 
-
-
   def show
     @photos = @recipe.photos
     @image = @photos.first
@@ -74,7 +72,6 @@ class RecipesController < ApplicationController
     @recipe.destroy
     redirect_to home_path
   end
-
 
   def self.search(term)
   if term

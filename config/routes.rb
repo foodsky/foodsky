@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
-
   get 'comments/create'
 
   get 'comments/destroy'
