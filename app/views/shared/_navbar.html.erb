@@ -22,6 +22,7 @@
             <%= current_user.name %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
             <%= link_to "Create recipe", new_recipe_path, class: "dropdown-item" %>
             <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
