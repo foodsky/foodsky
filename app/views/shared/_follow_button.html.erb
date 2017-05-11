@@ -1,0 +1,20 @@
+<% if user_signed_in? %>
+  <% if current_user.following?(target) %>
+    <%=
+      link_to over_fellowship_path(following_id: target.id),
+        remote: true,
+        method: 'delete',
+        id: "button-follow-#{target.id}" do %>
+          <button class="btn btn-default float-md-right">Unfollow <i class="fa fa-rss" aria-hidden="true"></i></button>
+      <% end %>
+  <% else %>
+
+    <%=
+      link_to build_fellowship_path(following_id: target.id),
+        remote: true,
+        method: 'post',
+        id: "button-follow-#{target.id}" do %>
+          <button class="btn btn-primary float-md-right">Follow <i class="fa fa-rss" aria-hidden="true"></i></button>
+    <% end %>
+  <% end %>
+<% end %>

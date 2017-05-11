@@ -1,0 +1,2 @@
+$("#button-follow-<%= @following.id %>").replaceWith("<%= j render partial: 'shared/follow_button', locals: { target: @following } %>")
+$("#followings-count-user-<%= @following.id %>").html("<%= @following.followings.count %>");

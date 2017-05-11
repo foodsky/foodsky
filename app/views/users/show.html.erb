@@ -4,11 +4,13 @@
       <div class="col-3 text-center">
         <%= image_tag avatar_url(@user), class: "img-circle w-50" %>
         <p class= "user-name-cover"> <%= @user.name %> </p>
-        <a href="#">20 follower</a>
+        <a id="followers-count-user" href="#"><%= @user.followers.count %> follower</a>
       </div>
       <div class="col-9">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates adipisci reprehenderit cum deserunt natus odit? Perferendis, suscipit harum animi numquam amet minima error veritatis itaque repudiandae placeat, delectus ut quaerat!</p>
-        <button class="btn btn-primary float-md-right">Follow <i class="fa fa-rss" aria-hidden="true"></i></button>
+        <% if current_user.id != @user.id %>
+          <%= render partial: 'shared/follow_button', locals: { target: @user } %>
+        <% end %>
       </div>
     </div>
 

@@ -18,11 +18,14 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
-  resources :users do
+  resources :users, only: [:show] do
     member do
       get :following, :followers
     end
   end
 
-  resources :relationship, only: [:create, :destroy]
+  #resources :relationships, only: [:create, :destroy]
+
+  post '/relation/:following_id', to: 'relationships#build', as: :build_fellowship
+  delete '/relation/:following_id', to: 'relationships#over', as: :over_fellowship
 end
