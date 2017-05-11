@@ -1,14 +1,14 @@
 <div class="row">
-  <div class="col-12 ">
-    <div class="row" style="background: #fafafa">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="row jumbotron cover-wrap">
       <div class="col-3 text-center">
         <%= image_tag avatar_url(@user), class: "img-circle w-50" %>
-        <p> <%= @user.name %> </p>
+        <p class= "user-name-cover"> <%= @user.name %> </p>
         <a href="#">20 follower</a>
       </div>
       <div class="col-9">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates adipisci reprehenderit cum deserunt natus odit? Perferendis, suscipit harum animi numquam amet minima error veritatis itaque repudiandae placeat, delectus ut quaerat!</p>
-        <button class="btn btn-primary float-md-right">follow</button>
+        <button class="btn btn-primary float-md-right">Follow <i class="fa fa-rss" aria-hidden="true"></i></button>
       </div>
     </div>
 
@@ -20,11 +20,17 @@
             <%= render partial: 'shared/recipe_small', locals: {recipe: recipe} %>
           <% end %>
         <% else %>
-          <div>
-            You don't have any recipes. Create recipe now!
-          </div>
-        <% end %>
       </ul>
     </div>
+          <div class="jumbotron">
+            <% if current_user.name = @user.name %>
+              <h2>You don't have any recipes. Create recipe now!</h2>
+              <p></p>
+              <%= link_to "Create recipe now", new_recipe_path, class: "btn btn-primary btn-lg" %>
+            <% else %>
+              <h2>This user haven't had any recipes yet!</h2>
+            <% end %>
+          </div>
+        <% end %>
   </div>
 </div>
