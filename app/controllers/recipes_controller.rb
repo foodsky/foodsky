@@ -73,15 +73,15 @@ class RecipesController < ApplicationController
     redirect_to home_path
   end
 
-   def self.search(term)
-  if term
-    Recipe.where('title LIKE ?', "%#{params[:term]}%").order('id DESC')
-  else
-    @recipes = current_user.recipes.order('id DESC') 
-  end
+  def self.search(term)
+    if term
+      Recipe.where('title LIKE ?', "%#{params[:term]}%").order('id DESC')
+    else
+      @recipes = current_user.recipes.order('id DESC') 
+    end
 
-  redirect_to home_path
-end
+    redirect_to home_path
+  end
 
   private
     def set_recipe

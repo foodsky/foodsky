@@ -3,13 +3,14 @@
     remote: true,
     method: 'delete',
     id: "button-like-recipe-#{recipe.id}" do %>
-      <span class= "btn btn-default" title="Unlike"><i class="fa fa-heart like" aria-hidden="true"></i></span>
+      <span class= "btn" title="Unlike"><i class="fa fa-heart like" aria-hidden="true"></i></span>
   <% end %>
 <% else %>
   <%= link_to recipe_likes_path(recipe_id: recipe.id),
     remote: true,
     method: 'post',
     id: "button-like-recipe-#{recipe.id}" do %>
-      <span class= "btn btn-default" title="Like"><i class="fa fa-heart-o like" aria-hidden="true"></i></span>
+      <span class= "btn" title="Like"><i class="fa fa-heart-o like" aria-hidden="true"></i></span>
   <% end %>
 <% end %>
+

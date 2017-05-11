@@ -2,6 +2,8 @@
   <%= image_tag recipe.photos.first.file, class: "card-img-top img-fluid" %>
   <div class="card-block">
     <h4 class="card-title recipe-title"><%= link_to recipe.title, recipe_path(recipe.id) %></h4>
+    <strong class= "user-name">
+            <%= link_to  recipe.user.name, user_path(recipe.user), class: "" %></strong>
     <p class="card-text"><%= recipe.describe %></p>
   </div>
   <div class="card-footer">
