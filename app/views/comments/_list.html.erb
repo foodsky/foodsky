@@ -4,7 +4,7 @@
   <% @comments.order("id desc").each do |comment|%>
     <hr>
     <%= image_tag avatar_url(comment.user), class: "img-circle avatar-medium" %>
-    <strong><%= comment.user.name %></strong> 
+    <strong><%= link_to  comment.user.name, user_path(@recipe.user), class: "" %></strong>
     <div>
       <span class="pull-right">
         <%= link_to [@recipe, comment], method: :delete, data: {confirm: "Are you sure?"} do %>
