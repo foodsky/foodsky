@@ -1,3 +1,11 @@
 // Place all the styles related to the Page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.foodsky{
+	color: #16D665 !important;
+	font-size: 25px !important;
+	font-weight: bold !important;
+}
+.bg-foodsky{
+	background-image: linear-gradient(to top, rgba(210,239,245,0.753), rgba(0,0,0,0.753)), url("./bg.jpg");
+}

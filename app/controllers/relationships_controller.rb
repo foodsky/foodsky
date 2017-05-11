@@ -6,9 +6,7 @@ class RelationshipsController < ApplicationController
 
     unless current_user == @following
       current_user.follow(@following)
-      respond_to do |format|
-        format.js
-      end
+      redirect_to user_path(@following)
     end
   end
 
@@ -16,9 +14,7 @@ class RelationshipsController < ApplicationController
     load_following
 
     if current_user.unfollow(@following)
-      respond_to do |format| 
-        format.js 
-      end
+     redirect_to user_path(@following)
     end
   end
 
