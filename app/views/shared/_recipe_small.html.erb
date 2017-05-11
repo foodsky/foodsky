@@ -5,8 +5,8 @@
     <p class="card-text"><%= recipe.describe %></p>
   </div>
   <div class="card-footer">
-    <span class= "btn btn-default" title="Like"><i class="fa fa-heart like" aria-hidden="true"></i></span>
-	<span class= "btn btn-default" title="Bookmark"><i class="fa fa-bookmark bookmark" aria-hidden="true"></i></span>
+    <%= render partial: 'likes/like_button', locals: {recipe: recipe} %>
+    <%= render partial: 'bookmarks/bookmark_button', locals: { recipe: recipe } %>
 	<small class="text-muted">Last updated 3 mins ago</small>
   </div>
 </div>

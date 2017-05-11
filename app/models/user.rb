@@ -13,7 +13,54 @@ class User < ApplicationRecord
     foreign_key: "followed_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :likes
+  has_many :bookmarks
   
+
+
+  def add_bookmark?(recipe_id)
+    if has_bookmark?(recipe_id)
+      return false
+    else
+      Bookmark.create!(user_id: self.id, recipe_id: recipe_id)
+    end
+
+  end
+
+  def delete_bookmark?(recipe_id)
+    unless has_bookmark?(recipe_id)
+      return false
+    else
+      Bookmark.where(user_id: self.id, recipe_id: recipe_id).delete_all
+      return true
+    end
+  end
+
+  def has_bookmark?(recipe_id)
+    Bookmark.exists?(user_id: self.id, recipe_id: recipe_id)
+  end
+
+  def add_like?(recipe_id)
+    if has_like?(recipe_id)
+      return false
+    else
+      Like.create!(user_id: self.id, recipe_id: recipe_id)
+    end
+
+  end
+
+  def delete_like?(recipe_id)
+    unless has_like?(recipe_id)
+      return false
+    else
+      Like.where(user_id: self.id, recipe_id: recipe_id).delete_all
+      return true
+    end
+  end
+
+  def has_like?(recipe_id)
+    Like.exists?(user_id: self.id, recipe_id: recipe_id)
+  end
 
   def follow(other_user)
     following << other_user

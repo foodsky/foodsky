@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'bookmarks/create'
+
+  get 'bookmarks/destroy'
+
   get 'comments/create'
 
   get 'comments/destroy'
@@ -16,6 +20,8 @@ Rails.application.routes.draw do
   resources :photos
   resources :recipes do
     resources :comments, only: [:create, :destroy]
+    resources :bookmarks, only: [ :create, :destroy ]
+    resources :likes, only: [ :create, :destroy ]
   end
 
   resources :users, only: [:show] do

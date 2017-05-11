@@ -1,0 +1,2 @@
+$("#button-like-recipe-<%= @recipe.id %>").replaceWith("<%= j render partial: 'likes/like_button', locals: { recipe: @recipe } %>")
+
