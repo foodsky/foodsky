@@ -4,7 +4,12 @@ class RecipesController < ApplicationController
 
 
   def index
-    @recipes = current_user.recipes
+     @recipes = if params[:term]
+     Recipe.where('title LIKE ?', "%#{params[:term]}%")
+   else
+    current_user.recipes
+  end
+
   end
 
   def show
@@ -68,6 +73,15 @@ class RecipesController < ApplicationController
     redirect_to home_path
   end
 
+   def self.search(term)
+  if term
+    Recipe.where('title LIKE ?', "%#{params[:term]}%").order('id DESC')
+  else
+    @recipes = current_user.recipes.order('id DESC') 
+  end
+
+  redirect_to home_path
+end
 
   private
     def set_recipe
@@ -75,6 +89,6 @@ class RecipesController < ApplicationController
     end
 
     def recipe_params
-      params.require(:recipe).permit(:title, :describe, :ingredients, :serving, :method)
+      params.require(:recipe).permit(:title, :describe, :ingredients, :serving, :method, :term)
     end
 end
