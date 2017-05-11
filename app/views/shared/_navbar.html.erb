@@ -11,6 +11,7 @@
         <a class="nav-link" href="#">About</a>
       </li>
     </ul>
+    <%= render partial: 'shared/searchbar' %>
     <ul class="navbar-nav">
       <% unless user_signed_in? %>
         <li><%= link_to "Log In", new_user_session_path, class: "nav-link" %></li>
