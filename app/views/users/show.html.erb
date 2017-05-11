@@ -23,7 +23,7 @@
       </ul>
     </div>
           <div class="jumbotron">
-            <% if current_user.name = @user.name %>
+            <% if current_user.name == @user.name %>
               <h2>You don't have any recipes. Create recipe now!</h2>
               <p></p>
               <%= link_to "Create recipe now", new_recipe_path, class: "btn btn-primary btn-lg" %>
