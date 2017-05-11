@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     load_recipe
 
     respond_to do |format|
-      if current_user.add_cool?(params[:review_id])
+      if current_user.add_like?(params[:recipe_id])
         format.js
       else
         format.json { render json: {status: :failed} }
