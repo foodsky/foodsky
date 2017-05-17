@@ -10,6 +10,6 @@
     <%= render partial: 'likes/like_button', locals: {recipe: recipe} %>
     <span id="count-like-<%= recipe.id %>"> <%= recipe.likes.count %></span>
     <%= render partial: 'bookmarks/bookmark_button', locals: { recipe: recipe } %>
-	<small class="text-muted">Last updated 3 mins ago</small>
+	<small class="text-muted">Last updated <%= distance_of_time_in_words(recipe.created_at, Time.now) %> ago</small>
   </div>
 </div>
