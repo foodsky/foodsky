@@ -1,0 +1,36 @@
+<script>
+  new WOW().init();
+</script>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="row jumbotron cover-wrap">
+      <div class="col-3 text-center">
+        <%= image_tag avatar_url(@user), class: "img-circle w-50" %>
+        <p class= "user-name-cover"> <%= @user.name %> </p>
+        <a id="followers-count-user" href="#"><%= @user.followers.count %> follower</a>
+      </div>
+      <div class="col-9">
+        <br>
+        <p style="font-size:3em">All your bookmarks</p>
+        <br>
+      </div>
+    </div>
+
+
+    <div class="row mt-10" style="margin-top: 30px">
+      <ul class="card-columns">
+        <% if @user.bookmarks.any? %>
+          <% @user.bookmarks.each do |bookmark| %>
+            <%= render partial: 'shared/recipe_small', locals: {recipe: bookmark.recipe} %>
+          <% end %>
+        <% else %>
+      </ul>
+    </div>
+          <div class="jumbotron">
+            <% if current_user.name == @user.name %>
+              <h2>You don't have any bookmark!</h2>
+            <% end %>
+          </div>
+        <% end %>
+  </div>
+</div>

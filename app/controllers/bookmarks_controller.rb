@@ -17,6 +17,7 @@ class BookmarksController < ApplicationController
 
   def index
     @bookmarks = current_user.bookmarks
+    @user = current_user
   end
 
   def destroy
