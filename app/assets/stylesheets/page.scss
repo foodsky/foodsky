@@ -20,3 +20,59 @@
 	box-shadow: 10px 10px 10px grey;
 	background-color: #ffffff;
 }
+.user-name-nav{
+	color: #ffffff;
+	font-weight: bold !important;
+}
+
+.wrap-landing{
+	background-image: linear-gradient(to top, rgba(0,0,0,0.753), rgba(0,0,0,0.753)), url('./bg.jpg');
+	position: fixed; 
+	  top: 0; 
+	  left: 0; 
+	min-width: 100%;
+	min-height: 100%;
+	color: #ffffff;
+    text-align: center;
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap-landing .content{
+	display: block;
+    align-items: center;
+    overflow-x: hidden;
+    z-index: 999;
+    padding: 3.5rem 2.75rem;
+    max-width: 100%;
+    width: 38rem;
+    float: center;
+    color: #fff;
+}
+
+.wrap-landing .content h1{
+	font-family: 'Montserrat';
+    line-height: 1.125;
+    font-weight: 400;
+    font-size: 3.75em;
+}
+
+.wrap-landing .content ul{
+	list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.wrap-landing .content ul li{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: calc(100% - 0.75rem);
+    margin: 0.375rem;
+}
+.wrap-landing .content i{
+	margin: 10px;
+	margin-top: 0px;
+	cursor: pointer;
+}
