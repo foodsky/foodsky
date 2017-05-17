@@ -1,1 +1,3 @@
-$("#button-like-recipe-<%= @recipe.id %>").replaceWith("<%= j render partial: 'likes/like_button', locals: { recipe: @recipe } %>")
+$("#button-like-recipe-<%= @recipe.id %>").replaceWith("<%= j render partial: 'likes/like_button', locals: { recipe: @recipe } %>");
+
+$("#count-like-<%= @recipe.id %>").replaceWith("<span id=\"count-like-<%= @recipe.id %>\"> <%= @recipe.likes.count %></span>")

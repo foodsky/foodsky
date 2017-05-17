@@ -17,6 +17,7 @@
               <%= render partial: 'shared/follow_button', locals: { target: @recipe.user } %>
             <% end %>
             <%= render partial: 'likes/like_button', locals: {recipe: @recipe} %>
+            <span id="count-like-<%= @recipe.id %>"> <%= @recipe.likes.count %></span>
             <%= render partial: 'bookmarks/bookmark_button', locals: { recipe: @recipe } %>
 					</p>
 					<% if current_user.name == @recipe.user.name %>
