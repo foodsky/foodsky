@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .foodsky{
-	color: #16D665 !important;
+	color: #ffffff!important;
 	font-size: 25px !important;
 	font-weight: bold !important;
 }
-.bg-foodsky{
-	background-image: linear-gradient(to top, rgba(210,239,245,0.753), rgba(0,0,0,0.753)), url("./bg.jpg");
+.bg-nav{
+	background-image: linear-gradient(to top, rgba(77,234,242,0.3), rgba(0,0,0,0.1)), url("./sky.jpg");
 }
