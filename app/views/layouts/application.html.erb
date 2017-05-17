@@ -30,16 +30,17 @@
     }
     </style>
   </head>
-
-  <body>
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
+    <body>
       <%= render 'shared/navbar' %>
       <%= render 'shared/message' %>
       <div class="container">
         <%= yield %>
       </div>
-    <% else %>
+    </body>
+  <% else %>
+    <body class="body-bg">
       <%= yield %>
-    <% end %>
-  </body>
+    </body>
+  <% end %>
 </html>
