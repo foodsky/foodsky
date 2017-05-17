@@ -19,3 +19,4 @@
 //= require_tree .
 //= require bootstrap
 //= require ckeditor/init
+//= require wow
