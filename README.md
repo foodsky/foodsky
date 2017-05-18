@@ -1,24 +1,18 @@
-# README
+# Ruby on Rails Project
+<b>Japanese for IT Course. IT日本語コース</b>
+</br>
+A social network for those who love to cook. Users can share their own recipes and learn how to make other dishes.
+料理が好きな人のためのソーシャルネットワークです。ユーザーは自分の料理をシェアしたり、新しい料理作り方を学ぶことができます。
+</br>
+If you love to cook, this is place for you.
+料理が好きなら、これはあなたのための場所です。
+</br>
+グループメンバー:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Nguyen Tri Minh (leader)
 
-Things you may want to cover:
+* Doan Anh Tu (subleader)
 
-* Ruby version
+* Pham Ngoc Thach
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Do Xuan Tho
